@@ -19,3 +19,14 @@ def lucas(n):
         return 1
     else:
         return lucas(n - 2) + lucas(n - 1)
+
+def sum_series(n, x=0, y=1):
+    """Return the nth term of a customizable series with base cases
+    n == 0 return x and n == 1 return y. Returns the nth term of the
+    Fibonacci series if no optional parameters entered."""
+    if n == 0:
+        return x
+    if n == 1:
+        return y
+    else:
+        return sum_series(n-2, x, y) + sum_series(n-1, x, y)
