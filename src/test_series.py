@@ -6,7 +6,8 @@ PARAMS_FIB = [
     (0, 0),
     (1, 1),
     (2, 1),
-    (3, 2)
+    (3, 2),
+
 ]
 
 # Expected answers for Lucas number sequence.
@@ -26,8 +27,15 @@ def test_fibonacci(n, result):
     from series import fibonacci
     assert fibonacci(n) == result
 
+
 @pytest.mark.parametrize("n, result", PARAMS_LUC)
 def test_lucas(n, result):
     """Test the lucas function."""
     from series import lucas
     assert lucas(n) == result
+
+@pytest.mark.parametrize("n, result", PARAMS_FIB)
+def test_sum_series_default(n, result):
+    """Test the sum_series function with default values that should return fibonacci sequence"""
+    from series import sum_series
+    assert sum_series(n) == result
