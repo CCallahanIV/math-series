@@ -11,7 +11,13 @@ PARAMS_FIB = [
 
 # Expected answers for Lucas number sequence.
 PARAMS_LUC = [
-
+    (0, 2),
+    (1, 1),
+    (2, 3),
+    (3, 4),
+    (4, 7),
+    (5, 11),
+    (6, 18)
 ]
 
 @pytest.mark.parametrize("n, result", PARAMS_FIB)
@@ -19,3 +25,9 @@ def test_fibonacci(n, result):
     """Test the fibonacci function."""
     from series import fibonacci
     assert fibonacci(n) == result
+
+@pytest.mark.parametrize("n, result", PARAMS_LUC)
+def test_lucas(n, result):
+    """Test the lucas function."""
+    from series import lucas
+    assert lucas(n) == result

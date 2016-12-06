@@ -3,3 +3,5 @@ include
 lib
 pyvenv.cfg
 pip-selfcheck.json
+src/__pycache__
+.cache
