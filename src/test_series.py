@@ -21,6 +21,15 @@ PARAMS_LUC = [
     (6, 18)
 ]
 
+PARAMS_2_11 = [
+    (0, 2),
+    (1, 11),
+    (2, 13),
+    (3, 24),
+    (4, 37),
+    (5, 61),
+]
+
 @pytest.mark.parametrize("n, result", PARAMS_FIB)
 def test_fibonacci(n, result):
     """Test the fibonacci function."""
@@ -39,3 +48,16 @@ def test_sum_series_default(n, result):
     """Test the sum_series function with default values that should return fibonacci sequence"""
     from series import sum_series
     assert sum_series(n) == result
+
+@pytest.mark.parametrize("n, result", PARAMS_LUC)
+def test_sum_series_luc(n, result):
+    """Test the sum_series function passing the lucas initial values (2 and 1) which should return the lucas sequence"""
+    from series import sum_series
+    assert sum_series(n, 2, 1) == result
+
+
+@pytest.mark.parametrize("n, result", PARAMS_2_11)
+def test_sum_series_2_11(n, result):
+    """Test the sum_series function passing 2 and 11 as initial values."""
+    from series import sum_series
+    assert sum_series(n, 2, 11) == result
